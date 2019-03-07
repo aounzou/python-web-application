@@ -66,6 +66,32 @@ def registerData():
     return etat
 
 
+@app.route('/listproduct')
+def listProduct():
+    loggin = ""
+    itemData=[]
+    if 'userId' not in session:
+        loggin = False
+    else:
+        loggin = True
+        with sqlite3.connect('database.db') as conn:
+            cur = conn.cursor()
+
+            cur.execute('SELECT * FROM like')
+            itemData = cur.fetchall()
+            print(itemData)
+            """
+            cur.execute('SELECT p.productId, p.name, p.description, p.image FROM products p  WHERE p.productId NOT IN (SELECT l.productId FROM like l )')
+            """
+            cur.execute(
+                'select p.productId, p.name, p.description, p.image from products p where not exists(select l.productId,l.userId  from like l where  p.productId = l.productId and l.userId =' + str(
+                    session['userId']) + ')')
+
+            itemData = cur.fetchall()
+            print(itemData)
+
+
+    return render_template('listproduit.html', itemData=itemData, loggin=loggin)
 
 
 def is_valid(email, password):
