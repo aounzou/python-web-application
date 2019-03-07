@@ -13,14 +13,21 @@ Use the package manager pip install flask.
 ```bash
 pip install flask
 ```
-#Screnshots
-##login
+# Screnshots
+## login
+
 ![Screenshot](screenshots/login.PNG)
-##register
+
+## register
+
 ![Screenshot](screenshots/register.PNG)
-##List of Products
+
+## List of Products
+
 ![Screenshot](screenshots/list products.PNG)
-##List of liked products
+
+## List of liked products
+
 ![Screenshot](screenshots/list liked.PNG)
 
 ## Application link deploy on Automation Anywhere
