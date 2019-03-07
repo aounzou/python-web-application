@@ -15,13 +15,13 @@ pip install flask
 ```
 #Screnshots
 ##login
-![Screenshot](screenshots\login.PNG)
+![Screenshot](screenshots/login.PNG)
 ##register
-![Screenshot](screenshots\register.PNG)
+![Screenshot](screenshots/register.PNG)
 ##List of Products
-![Screenshot](screenshots\list products.PNG)
+![Screenshot](screenshots/list products.PNG)
 ##List of liked products
-![Screenshot](screenshots\list liked.PNG)
+![Screenshot](screenshots/list liked.PNG)
 
 ## Application link deploy on Automation Anywhere
 
