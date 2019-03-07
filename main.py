@@ -159,6 +159,10 @@ def clickRemove():
     return "True"
 
 
+@app.route('/logout')
+def logout():
+    session.pop('userId', None)
+    return render_template('login.html')
 
 
 
