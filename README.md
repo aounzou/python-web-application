@@ -24,11 +24,11 @@ pip install flask
 
 ## List of Products
 
-![Screenshot](screenshots/list products.PNG)
+![Screenshot](screenshots/listproducts.PNG)
 
 ## List of liked products
 
-![Screenshot](screenshots/list liked.PNG)
+![Screenshot](screenshots/listliked.PNG)
 
 ## Application link deploy on Automation Anywhere
 
