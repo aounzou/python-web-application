@@ -30,6 +30,6 @@ pip install flask
 
 ![Screenshot](screenshots/listliked.PNG)
 
-## Application link deploy on Automation Anywhere
+## Application link deploy on Python Anywhere
 
 http://amineaounzou1.pythonanywhere.com
