@@ -80,9 +80,6 @@ def listProduct():
             cur.execute('SELECT * FROM like')
             itemData = cur.fetchall()
             print(itemData)
-            """
-            cur.execute('SELECT p.productId, p.name, p.description, p.image FROM products p  WHERE p.productId NOT IN (SELECT l.productId FROM like l )')
-            """
             cur.execute(
                 'select p.productId, p.name, p.description, p.image from products p where not exists(select l.productId,l.userId  from like l where  p.productId = l.productId and l.userId =' + str(
                     session['userId']) + ')')
@@ -92,6 +89,78 @@ def listProduct():
 
 
     return render_template('listproduit.html', itemData=itemData, loggin=loggin)
+
+
+
+@app.route('/likedProduct')
+def likedProduct():
+    loggin = ""
+    if 'userId' not in session:
+        loggin = False
+    else:
+        loggin = True
+
+    with sqlite3.connect('database.db') as conn:
+        cur = conn.cursor()
+        userId = 1
+        cur.execute('SELECT * FROM like')
+        itemData = cur.fetchall()
+        print(itemData)
+
+        cur.execute(
+            'select p.productId, p.name, p.description, p.image from products p where  exists(select l.productId,l.userId  from like l where  p.productId = l.productId and l.userId =' + str(
+                session['userId']) + ')')
+
+        itemData = cur.fetchall()
+        print(itemData)
+
+    return render_template('likedproduit.html', itemData=itemData, loggin=loggin)
+
+
+@app.route('/clickLike', methods=['GET', 'POST'])
+def clickLike():
+    idproduits = int(request.form['id'])
+    idUser = session['userId']
+
+    with sqlite3.connect('database.db') as con:
+        try:
+            cur = con.cursor()
+            cur.execute(
+                'INSERT INTO like (userId, productId) VALUES (?, ?)', (idUser, idproduits))
+            con.commit()
+
+            msg = "Registered Successfully"
+        except:
+            con.rollback()
+            msg = "Error occured"
+    con.close()
+    print(msg)
+
+    return "True"
+
+@app.route('/clickRemove', methods=['GET', 'POST'])
+def clickRemove():
+    idproduits = int(request.form['id'])
+    idU = session['userId']
+    print(idU)
+    with sqlite3.connect('database.db') as con:
+        try:
+            cur = con.cursor()
+            cur.execute("DELETE FROM like WHERE userId = " + str(idU) + " AND productId = " + str(idproduits))
+
+            con.commit()
+            msg = "Registered Successfully"
+        except:
+            con.rollback()
+            msg = "Error occured"
+    con.close()
+    print(msg)
+
+    return "True"
+
+
+
+
 
 
 def is_valid(email, password):
