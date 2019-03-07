@@ -20,7 +20,7 @@ pip install flask
 
 ## register
 
-![Screenshot](screenshots/register.PNG)
+![Screenshot](screenshots/registre.PNG)
 
 ## List of Products
 
