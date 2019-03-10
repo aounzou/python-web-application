@@ -28,8 +28,8 @@ pip install flask
 
 ## List of liked products
 
-![Screenshot](screenshots/listliked.PNG)
+![Screenshot](screenshots/likedproducts.PNG)
 
 ## Application link deploy on Python Anywhere
 
-http://amineaounzou1.pythonanywhere.com
+http://amineaounzou.pythonanywhere.com/
