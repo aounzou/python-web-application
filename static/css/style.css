@@ -33,6 +33,7 @@ h1{
     padding: 0px 10px 0px 10px;
     border: #2980b9 4px solid;
     float: left;
+    height: 50%;
 }
 
 .email{
@@ -65,13 +66,32 @@ h1{
   border-radius:4px;
   border: #27ae60 1px solid;
   
-  margin-top:20px;
+  margin-top:45px;
   margin-bottom:20px;
   float:left;
   margin-left:16px;
   font-weight:800;
   font-size:0.8em;
 }
+
+.btn1{
+    background: #2ecc71;
+    width: 125px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+    border-radius: 4px;
+    border: #27ae60 1px solid;
+    margin-top: 51px;
+    margin-bottom: 20px;
+    float: left;
+    margin-left: 85px;
+    font-weight: 800;
+    font-size: 0.8em;
+}
+
+
+
 
 .btn:hover{
   background:#2CC06B; 
@@ -86,7 +106,7 @@ h1{
   border-radius:4px;
   border: #2980b9 1px solid;
   
-  margin-top:20px;
+  margin-top:45px;
   margin-bottom:20px;
   margin-left:10px;
   font-weight:800;
@@ -171,7 +191,7 @@ h1{
 .itemImage{
 
     width: 60%;
-     
+    height: 47%; 
 
 
 }
