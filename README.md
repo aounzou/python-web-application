@@ -24,7 +24,7 @@ pip install flask
 
 ## List of Products
 
-![Screenshot](screenshots/listproducts.PNG)
+![Screenshot](screenshots/listproductsNew.PNG)
 
 ## List of liked products
 
