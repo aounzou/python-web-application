@@ -4,7 +4,7 @@
 
 <script type=text/javascript>
 			$(function() {
-			 $(".btn").click(function(event) {
+			 $(".btn1").click(function(event) {
 			                 //alert(event.target.id)
                             $(".box[id="+event.target.id+"]").hide()
                         
@@ -51,7 +51,7 @@
 
 		<h1>{{data[1]}}</h1>
 		<img src={{ url_for('static', filename='uploads/'+data[3])}} class="itemImage" />
-		<a href="#"><div class="btn" id={{data[0]}} >Remove</div></a>
+		<a href="#"><div class="btn1" id={{data[0]}} >Remove</div></a>
 		
 	</div> 		 
  
